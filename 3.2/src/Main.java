@@ -14,24 +14,25 @@ public class Main {
         //variable
         int iEdad = 0;
         int iMayorEdad = 0;
-        int iSumaEdades;
+        int iSumaEdades = 0;
         int iNumAlumnos = 0;
 
         do {
             Scanner sc = new Scanner(System.in);
             System.out.println("Introduce la edad del alumno: ");
-            if (iEdad > 18) {
+            if (iEdad >= 18) {
                 iMayorEdad++;
             }
-            iNumAlumnos++;
+
+            iSumaEdades = iSumaEdades + iEdad;
             iEdad = sc.nextInt();
+            if (iEdad > 0) iNumAlumnos++;
         } while (iEdad > 0);
-            iSumaEdades = iEdad + iEdad;
 
 
         System.out.println("Suma de edades: " + iSumaEdades);
-        System.out.println("Media de edad: "+ (iSumaEdades/iNumAlumnos));
+        System.out.println("Media de edad: "+ (double)iSumaEdades/(double)iNumAlumnos);
         System.out.println("Mayores de edad: " + iMayorEdad);
-        System.out.println("Numero de alumnos: " + iNumAlumnos);
+        System.out.println("Numero de alumnos: " + (iNumAlumnos));
     }
 }
